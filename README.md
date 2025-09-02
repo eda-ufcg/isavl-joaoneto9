@@ -1,8 +1,8 @@
 # Identificação
 
-* Nome: 
-* Email (@ccc): 
-* Matrícula: 
+* Nome: João Ventura Crispim Neto 
+* Email (@ccc): joao.ventura.crispim.neto@ccc.ufcg.edu.br
+* Matrícula: 124110750
 
 # Roteiro: isAVL
 

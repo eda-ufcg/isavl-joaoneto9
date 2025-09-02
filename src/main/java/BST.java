@@ -7,9 +7,31 @@ public class BST {
     private Node root;
     private int size;
 
+
+    public static void main(String[] args) {
+        BST bst = new BST();
+
+        System.out.println(bst.isAVL()); // true
+        bst.add(100);
+        System.out.println(bst.isAVL()); // true
+        bst.add(20);
+        System.out.println(bst.isAVL()); // true
+        bst.add(10); 
+        System.out.println(bst.isAVL()); // false
+        bst.add(101);
+        System.out.println(bst.isAVL()); // true 
+        bst.add(30);
+        System.out.println(bst.isAVL()); // true
+        bst.add(1);
+        System.out.println(bst.isAVL()); // false
+    }
+
     public boolean isAVL() {
         //TODO: implementar
-        return false;
+        if (isEmpty())
+            return true;
+
+        return balance(root) <= 1;
     }
 
     /**
@@ -17,7 +39,7 @@ public class BST {
      */
     public int height() {
         //TODO implementar
-        return -1;
+        return height(this.root);
     }
 
     /**
@@ -25,11 +47,14 @@ public class BST {
      * para recursão e para o balance.
      */
     private int height(Node node) {
-        return -1;
+        if (node == null)
+            return 0;
+
+        return 1 + Math.max(height(node.left), height(node.right));
     }
 
     private int balance(Node node) {
-        return -1;
+        return Math.abs(height(node.left) - height(node.right));
     }
 
     /**
